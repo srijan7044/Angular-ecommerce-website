@@ -1,0 +1,44 @@
+.product-card {
+  max-width: 280px;
+  margin: 12px;
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 8px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.discount {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 16px !important;
+}

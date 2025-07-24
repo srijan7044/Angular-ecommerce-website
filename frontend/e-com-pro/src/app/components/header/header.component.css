@@ -1,0 +1,200 @@
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius:15px ;
+  border-bottom-right-radius:15px ;
+  padding: 10px 25px;
+  background-color: #56ab2f;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* Left */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+}
+
+/* Center */
+.nav-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.search-bar {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+.search-btn {
+  margin-left: 5px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.icon-button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.profile {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* === DROPDOWN MENU === */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 100px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dropdown-menu button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* === CART === */
+.cart-container {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: white;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 1000;
+}
+.item-card {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.item-details {
+  flex: 1;
+}
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* === SELLER FORM POPUP === */
+.seller-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  max-height: 90vh;
+  background-color: #fff;
+  border: 2px solid #19d222;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  z-index: 9999;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+.seller-container h2 {
+  margin-top: 0;
+  color: #1976d2;
+  text-align: center;
+}
+
+.seller-container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.seller-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seller-container label {
+  font-weight: bold;
+}
+
+.seller-container input,
+.seller-container textarea,
+.seller-container select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.seller-container .submit {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seller-container .submit:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .nav-center {
+    margin-top: 10px;
+  }
+  .cart-container {
+    right: 0;
+    width: 100%;
+  }
+}

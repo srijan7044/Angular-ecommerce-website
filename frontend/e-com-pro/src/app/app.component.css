@@ -1,0 +1,22 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 24px 0;
+}
+
+.footer {
+  background-color: var(--surface-color);
+  color: var(--text-secondary);
+  padding: 16px 0;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .footer {
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}

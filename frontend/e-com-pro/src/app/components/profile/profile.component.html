@@ -1,0 +1,31 @@
+<div class="profile-container">
+  <div class="header">
+    <h1>User Profile</h1>
+  </div>
+
+  <div class="profile-card">
+  <img src="https://assets.vogue.com/photos/62acddaad252949a42d3d48c/master/w_2560%2Cc_limit/Avatar%2520Store_V11_Carousel%25202.jpeg" alt="" class="profile-image"/>
+
+    <div class="profile-info">
+      <label>Name:</label>
+      <input [(ngModel)]="user.name" type="text" />
+
+      <label>Email:</label>
+      <input [(ngModel)]="user.email" type="email" />
+
+      <label>Phone:</label>
+      <input [(ngModel)]="user.phone" type="text" />
+
+      <label>Address:</label>
+      <input [(ngModel)]="user.address" type="text" />
+
+      <label>Bio:</label>
+      <textarea [(ngModel)]="user.bio"></textarea>
+
+      <div class="buttons">
+        <button class="btn btn-save" (click)="onSave()">Save</button>
+        <button class="btn btn-logout" (click)="onLogout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>

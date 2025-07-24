@@ -1,0 +1,17 @@
+<mat-card class="product-card">
+  <img mat-card-image [src]="product.image" [alt]="product.name">
+  <mat-card-content>
+    <h3>{{ product.name }}</h3>
+    <p class="description">{{ product.description }}</p>
+    <div class="price-section">
+      <span class="price">{{ product.price | currency }}</span>
+      <span class="discount" *ngIf="product.discountPrice">{{ product.discountPrice | currency }}</span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Add to Cart</button>
+    <button mat-icon-button color="accent">
+      <mat-icon>favorite_border</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

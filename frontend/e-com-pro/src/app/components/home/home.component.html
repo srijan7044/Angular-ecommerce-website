@@ -1,0 +1,47 @@
+<div class="home-container">
+
+  <!-- User Banner -->
+  <div class="user-banner">
+    <h1>Welcome to GreenCart</h1>
+    <p>Your one-stop online store for everything!</p>
+  </div>
+
+  <!-- Product Grid -->
+  <div class="product-grid">
+    <!-- ✅ Loop through filtered products -->
+    <mat-card 
+      class="product-card" 
+      *ngFor="let product of filteredProducts" 
+      [@fadeInAnimation]
+      style="width: 200px; height:auto; object-fit: cover;"> <!-- ✅ Animation remains -->
+
+      <!-- ✅ Product Image from DB -->
+      <img mat-card-image [src]="product.image" alt="Product Image" style="width: 200px; height: 200px; object-fit: cover;"/>
+      
+      <!-- ✅ Product Name -->
+      <mat-card-title class="mat-card-pName">{{ product.name }}</mat-card-title>
+      
+      <!-- ✅ Product Price -->
+      <mat-card-subtitle class="pPrice">Price:- ₹{{ product.price }}</mat-card-subtitle>
+      
+      <!-- ✅ Product Description -->
+      <mat-card-content>
+        <p>{{ product.description }}</p>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <button mat-raised-button style="background-color: rgba(255, 166, 0, 0.798);">Buy Now</button>
+        
+        <!-- ✅ Add to Cart action -->
+        <button mat-raised-button (click)="addToCart(product)">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+        
+        <button mat-raised-button>Rating</button>
+      </mat-card-actions>
+
+    </mat-card> <!-- ✅ Each product loaded dynamically -->
+     
+  </div>
+
+</div>

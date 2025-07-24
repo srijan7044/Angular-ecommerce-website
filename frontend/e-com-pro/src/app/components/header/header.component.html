@@ -1,0 +1,92 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPgSfUAo_uWMMQ11mIb8QeLYEfdanxWWmZ0g&s" alt="Logo" class="logo" (click)="navigate()"/>
+    <span class="site-name">GreenCart</span>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="nav-center" *ngIf="!isLoginPage">
+    <input type="text" [(ngModel)]="searchValue" placeholder="Search..." class="search-bar" />
+    <button class="search-btn" (click)="onSearch()"><i class="fas fa-search"></i></button>
+  </div>
+
+  <!-- Profile, Cart, Dropdown -->
+  <div class="nav-right" *ngIf="!isLoginPage">
+    <!-- Dropdown Menu -->
+    <button class="icon-button" (click)="toggleDropdown()">
+      <i class="fas fa-ellipsis-v"></i>
+    </button>
+
+    <div class="dropdown-menu" *ngIf="isDropdownOpen">
+      <button>Order History</button>
+      <button (click)="sellerButtonClick()">Become a Seller</button>
+      <button>About Us</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+
+    <!-- Profile Button -->
+    <img src="https://www.pngmart.com/files/23/Profile-PNG-Photo.png" alt="Profile" class="profile" (click)="profileBtnClick()"/>
+
+    <!-- Cart Button -->
+    <button class="icon-button" (click)="toggleCart()">
+      <i class="fas fa-shopping-cart"></i>
+      <span>{{ cartItemCount }}</span>
+    </button>
+
+    <!-- Cart Items -->
+    <div class="cart-container" *ngIf="isCartOpen">
+      <div *ngFor="let item of cartItems" class="item-card">
+        <img [src]="item.image" alt="" class="item-img">
+        <div class="item-details">
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.price }}</p>
+          <button mat-button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button mat-button (click)="increaseQuantity(item)">+</button>
+          <button mat-button (click)="removeItem(item.id)">Delete</button>
+        </div>
+      </div>
+
+      <div class="cart-total">
+        <strong>Total: ₹{{ total }}</strong>
+      </div>
+    </div>
+  </div>
+  
+  <div class="seller-container" *ngIf="showSellerForm">
+  <h2>Bcome a Seller</h2>
+  <p>List Your Product Noww!!</p>
+
+  <form (ngSubmit)="addProduct()" #productForm="ngForm">
+    <!-- Image Upload -->
+    <label>Product Image</label>
+    <input type="file" (change)="onImageSelected($event)" required />
+
+    <!-- Product Name -->
+    <label>Product Name</label>
+    <input type="text" [(ngModel)]="newProduct.name" name="name" required />
+
+    <!-- Product Price -->
+    <label>Price (₹)</label>
+    <input type="number" [(ngModel)]="newProduct.price" name="price" required />
+
+    <!-- Product Description -->
+    <label>Description</label>
+    <textarea [(ngModel)]="newProduct.description" name="description" required></textarea>
+
+    <!-- Product Category -->
+    <label>Category</label>
+    <select [(ngModel)]="newProduct.category" name="category" required>
+      <option value="" disabled selected>Select Category</option>
+      <option value="Fruits">Fruits</option>
+      <option value="Vegetables">Vegetables</option>
+      <option value="Dairy">Dairy</option>
+      <option value="Bakery">Bakery</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <!-- Submit Button -->
+    <button class="submit" [disabled]="!productForm.form.valid">Add Product</button>
+  </form>
+  </div>
+</nav>
