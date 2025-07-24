@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+  profile = {
+    photo: '',
+  }
   user = {
     name: 'John Doe',
     email: 'john@example.com',
@@ -19,6 +22,6 @@ export class ProfileComponent {
   }
 
   onLogout(): void {
-    alert('Logging out...');
-  }
+    alert('Logging out...');
+  }
 }

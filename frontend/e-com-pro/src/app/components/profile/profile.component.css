@@ -1,3 +1,4 @@
+
 .profile-container {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -9,6 +10,24 @@
 .header {
   text-align: center;
   margin-bottom: 30px;
+  
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 10px; 
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: castom;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  background-color: #e8f5e9;  
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease; 
+
 }
 
 .profile-card {
@@ -18,41 +37,69 @@
   margin: 0 auto;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
 }
 
 .profile-image {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-color: #ccc;
+  background-color: #a0c529ad;
   margin: 0 auto 20px auto;
+  border-width: 2px;
+  border-style: solid;
 }
 
 .profile-info label {
   display: block;
   font-weight: bold;
   margin-top: 15px;
+  background-color: #f9ecec;
+  padding: 5px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 16px;
+
 }
 
 .profile-info input,
 .profile-info textarea {
-  width: 100%;
+  width: 479px;
   padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #1aa65b;
 }
 
 .profile-info textarea {
   resize: vertical;
   height: 80px;
+  background-color: #f0f8ff;
+  width: 479px;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  gap: 10px;
+  gap: 15px;
+}
+
+.mat-button1{
+  border-width: 3px;
+  border-style: solid;
+  border-color: #91b692;
+  background-color: #4ae14f;
+  border-radius: 5px;
+  max-width: 100%;
+}
+
+.mat-button {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #967471;
+  background-color: #ef3633;
+  border-radius: 5px;
 }
 
 .btn {
@@ -64,13 +111,15 @@
   cursor: pointer;
 }
 
-.btn-save {
-  background-color: #4caf50;
+.mat-button1:hover {
+  background-color: #347636;
   color: white;
+  transform: scale(0.9);
 }
 
-.btn-logout {
-  background-color: #e53935;
-  color: white;
+.mat-button:hover {
+  background-color: #ac2f2d;
+  color:white;
+  transform: scale(0.9);
 
 }
