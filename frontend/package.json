@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "e-com website",
+  "keywords": [
+    "Angular-ecommerce-website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Angular-ecommerce-website"
+  },
+  "license": "ISC",
+  "author": "srijan ray",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
